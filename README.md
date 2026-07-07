@@ -13,45 +13,59 @@ pip install -e .
 ### Exportar
 
 ```bash
-# Export basico (guarda en portablecode.portablecode)
+portablecode export [OPTIONS]
+```
+
+| Flag | Descripción |
+|------|-------------|
+| `-o, --output` | Ruta del archivo de salida (default: `portablecode.portablecode`) |
+| `--include-auth` | Incluir credenciales sensibles (`auth.json`) |
+| `--include-db` | Incluir base de datos `opencode.db` |
+| `--include-binaries` | Incluir binarios Tier 3 (solo funciona en mismo OS) |
+| `--include-engram` | Incluir memoria de engram/gentle-ai (transforma paths automáticamente) |
+
+```bash
+# Export basico
 portablecode export
 
 # Export con nombre custom
 portablecode export -o backup-julio.portablecode
 
-# Export incluyendo credenciales (auth.json)
-portablecode export --include-auth
-
-# Export incluyendo base de datos
-portablecode export --include-db
-
-# Export incluyendo binarios (solo sirve si la PC destino tiene el mismo OS)
-portablecode export --include-binaries
-
-# Export incluyendo memoria de engram/gentle-ai (transforma paths automaticamente)
-portablecode export --include-engram
-
-# Export completo (todo junto)
+# Export completo
 portablecode export -o full-backup.portablecode --include-auth --include-db --include-binaries --include-engram
 ```
 
 ### Importar
 
 ```bash
+portablecode import <archive> [OPTIONS]
+```
+
+| Flag | Descripción |
+|------|-------------|
+| `-f, --force` | Sobreescribir archivos existentes |
+| `--skip-auth` | No importar credenciales sensibles (`auth.json`) |
+
+```bash
 # Import basico
 portablecode import backup.portablecode
 
-# Import forzando sobreescribir archivos existentes
+# Import forzando sobreescribir
 portablecode import backup.portablecode --force
 
-# Import sin incluir credenciales
+# Import sin credenciales
 portablecode import backup.portablecode --skip-auth
-
-# Import completo forzado
-portablecode import full-backup.portablecode --force
 ```
 
 ### Listar archivos
+
+```bash
+portablecode list [OPTIONS]
+```
+
+| Flag | Descripción |
+|------|-------------|
+| `-a, --archive` | Listar archivos dentro de un archive |
 
 ```bash
 # Listar archivos de la config actual

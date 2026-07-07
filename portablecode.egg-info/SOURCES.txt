@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+portablecode/__init__.py
+portablecode/archive.py
+portablecode/cli.py
+portablecode/discover.py
+portablecode/engram.py
+portablecode/paths.py
+portablecode/transform.py
+portablecode/types.py
+portablecode.egg-info/PKG-INFO
+portablecode.egg-info/SOURCES.txt
+portablecode.egg-info/dependency_links.txt
+portablecode.egg-info/entry_points.txt
+portablecode.egg-info/requires.txt
+portablecode.egg-info/top_level.txt
