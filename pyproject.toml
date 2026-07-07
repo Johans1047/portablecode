@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portablecode"
+version = "1.0.0"
+description = "Migrate OpenCode configuration between PCs"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.scripts]
+portablecode = "portablecode.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["portablecode*"]

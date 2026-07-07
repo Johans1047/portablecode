@@ -1,0 +1,4 @@
+services:
+  test:
+    build: .
+    command: ["bash", "test-linux.sh"]
